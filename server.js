@@ -2,9 +2,13 @@
 ------------------------------------------------------- */
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 /* SETUP
 ------------------------------------------------------- */
+// Body-parser for reading of POST requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Heroku can set the port for the application
 var port = process.env.PORT || 3000;
@@ -12,11 +16,16 @@ var port = process.env.PORT || 3000;
 // EJS als view engine
 app.set('view engine', 'ejs');
 
+/* ROUTERS INLADEN
+------------------------------------------------------- */
+var userRouters = require('./routes/users');
+
+/* ROUTERS INSTELLEN
+------------------------------------------------------- */
 // Express looks for assets in public folder
 app.use(express.static(__dirname + '/public'));
 
-/* ROUTERS
-------------------------------------------------------- */
+app.use('/users', userRouters);
 
 app.get('/', function(req, res) {
     res.render('index');
