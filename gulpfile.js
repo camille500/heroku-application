@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify');	// Minify files
 const rename = require('gulp-rename');	// Rename files
 const sass = require('gulp-sass');	// Sass compiler
 const maps = require('gulp-sourcemaps');  // Create sourcemaps to map the original source
+const connect = require('gulp-connect');
 
 /* CONCAT ALL JS FILES
 ------------------------------------------------------- */
