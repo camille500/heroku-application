@@ -14,31 +14,37 @@ const connect = require('gulp-connect');
 ------------------------------------------------------- */
 gulp.task('concatJS', function(){
 	return gulp.src([
-		  'src/public/js/components/*.js',
-			'src/public/js/main.js'])
+		  'public/js/components/*.js',
+			'public/js/main.js'])
 	.pipe(maps.init())
 	.pipe(concat('scripts.js'))
 	.pipe(maps.write('./'))
-	.pipe(gulp.dest('src/public/dist/js'));
+	.pipe(gulp.dest('public/dist/js'));
 });
 
 /* MINIFY ALL JS FILES
 ------------------------------------------------------- */
 gulp.task('minifyJS', ['concatJS'], function(){
-	return gulp.src("src/public/dist/js/scripts.js")
+	return gulp.src("public/dist/js/scripts.js")
 	.pipe(uglify())
 	.pipe(rename('scripts.min.js'))
-	.pipe(gulp.dest('src/public/dist/js'));
+	.pipe(gulp.dest('public/dist/js'));
 });
 
 /* COMPILE SASS
 ------------------------------------------------------- */
 gulp.task('compileSass', function(){
-	return gulp.src('src/public/style/main.scss')
+	return gulp.src('public/style/main.scss')
 	.pipe(maps.init())
 	.pipe(sass())
 	.pipe(maps.write('./'))
-	.pipe(gulp.dest('src/public/dist/style'))
+	.pipe(gulp.dest('public/dist/style'))
+});
+
+/* WATCH SASS
+------------------------------------------------------- */
+gulp.task('watchSass', function() {
+	gulp.watch('public/style/**/*.scss', ['compileSass'])
 });
 
 /* BUILD TASK

@@ -22,6 +22,10 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+app.enable('verbose errors');
+app.use(function(req, res, next) {
+   res.render('404');
+});
 
 /* START APPLICATION
 ------------------------------------------------------- */
