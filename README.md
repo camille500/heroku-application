@@ -4,5 +4,9 @@ Check out the readme for more information & documentation.
 
 #Heroku
 
+To deploy application to Heroku:
+```sh
+$ git push heroku master
+```
 
 
