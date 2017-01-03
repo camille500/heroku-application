@@ -2,7 +2,7 @@
   "name": "heroku-node-application",
   "version": "1.0.0",
   "description": "First NodeJS Heroku Application",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node server.js"
   },
