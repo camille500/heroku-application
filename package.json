@@ -2,9 +2,10 @@
   "name": "heroku-node-application",
   "version": "1.0.0",
   "description": "First NodeJS Heroku Application",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
