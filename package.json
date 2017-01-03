@@ -4,8 +4,7 @@
   "description": "First NodeJS Heroku Application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "gulp default"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
