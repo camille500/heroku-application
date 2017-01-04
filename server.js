@@ -1,8 +1,11 @@
 /* DEPENDENCIES INLADEN
 ------------------------------------------------------- */
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+
+const bodyParser = require('body-parser');
+const path = require('path');
+
 
 /* SETUP
 ------------------------------------------------------- */
@@ -14,18 +17,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 var port = process.env.PORT || 3000;
 
 // EJS als view engine
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 /* ROUTERS INLADEN
 ------------------------------------------------------- */
-var userRouters = require('./routes/users');
+var treehouseRouters = require('./routes/treehouse');
 
 /* ROUTERS INSTELLEN
 ------------------------------------------------------- */
 // Express looks for assets in public folder
 app.use(express.static(__dirname + '/public'));
 
-app.use('/users', userRouters);
+app.use('/treehouse', treehouseRouters);
 
 app.get('/', function(req, res) {
     res.render('index');

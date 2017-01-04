@@ -1,12 +1,12 @@
 /* DEPENDENCIES INLADEN
 ------------------------------------------------------- */
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* MAIN USER ROUTER
 ------------------------------------------------------- */
 router.get('/', function(req, res) {
-  res.render('users/index');
+  res.render('treehouse/index');
 });
 
 module.exports = router;
