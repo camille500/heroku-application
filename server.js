@@ -1,22 +1,35 @@
 /* DEPENDENCIES INLADEN
 ------------------------------------------------------- */
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+
+const bodyParser = require('body-parser');
+const path = require('path');
+
 
 /* SETUP
 ------------------------------------------------------- */
+// Body-parser for reading of POST requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Heroku can set the port for the application
 var port = process.env.PORT || 3000;
 
 // EJS als view engine
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+/* ROUTERS INLADEN
+------------------------------------------------------- */
+var treehouseRouters = require('./routes/treehouse');
+
+/* ROUTERS INSTELLEN
+------------------------------------------------------- */
 // Express looks for assets in public folder
 app.use(express.static(__dirname + '/public'));
 
-/* ROUTERS
-------------------------------------------------------- */
+app.use('/treehouse', treehouseRouters);
 
 app.get('/', function(req, res) {
     res.render('index');
