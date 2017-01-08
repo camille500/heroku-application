@@ -22,14 +22,14 @@ app.set('view engine', 'ejs');
 
 /* ROUTERS INLADEN
 ------------------------------------------------------- */
-var treehouseRouters = require('./routes/treehouse');
+var accountRouters = require('./routes/account');
 
 /* ROUTERS INSTELLEN
 ------------------------------------------------------- */
 // Express looks for assets in public folder
 app.use(express.static(__dirname + '/public'));
 
-app.use('/treehouse', treehouseRouters);
+app.use('/account', accountRouters);
 
 app.get('/', function(req, res) {
     res.render('index');

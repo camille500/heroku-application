@@ -3,10 +3,10 @@
 const express = require('express');
 const router = express.Router();
 
-/* MAIN USER ROUTER
+/* MAIN ACCOUNT ROUTER
 ------------------------------------------------------- */
 router.get('/', function(req, res) {
-  res.render('treehouse/index');
+  res.render('account/index');
 });
 
 module.exports = router;

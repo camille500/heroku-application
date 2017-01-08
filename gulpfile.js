@@ -9,6 +9,7 @@ const rename = require('gulp-rename');	// Rename files
 const sass = require('gulp-sass');	// Sass compiler
 const maps = require('gulp-sourcemaps');  // Create sourcemaps to map the original source
 const connect = require('gulp-connect');
+const open = require('gulp-open');
 
 /* CONCAT ALL JS FILES
 ------------------------------------------------------- */
@@ -39,6 +40,13 @@ gulp.task('compileSass', function(){
 	.pipe(sass())
 	.pipe(maps.write('./'))
 	.pipe(gulp.dest('public/dist/style'))
+});
+
+/* OPEN IN BROWSER
+------------------------------------------------------- */
+gulp.task('openInBrowser', function(){
+  gulp.src(__filename)
+  .pipe(open({uri: 'http://localhost:3000'}));
 });
 
 /* WATCH SASS
