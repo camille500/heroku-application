@@ -3,10 +3,10 @@
 const express = require('express');
 const router = express.Router();
 
-/* MAIN ACCOUNT ROUTER
+/* MAIN LEARN ROUTER
 ------------------------------------------------------- */
 router.get('/', function(req, res) {
-  res.render('account/index');
+  res.render('learn/index');
 });
 
 module.exports = router;

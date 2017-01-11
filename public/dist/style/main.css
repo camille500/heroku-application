@@ -8,5 +8,12 @@
 ------------------------------------------------------- */
 /* INDEX OF COMPONENTS SASS FILES
 ------------------------------------------------------- */
+.learn__validation {
+  background-color: #ecf0f1;
+  padding-bottom: 2em; }
+  .learn__validation .learn_input {
+    padding: .5em; }
+    .learn__validation .learn_input__btn {
+      margin-top: 1em; }
 
 /*# sourceMappingURL=main.css.map */

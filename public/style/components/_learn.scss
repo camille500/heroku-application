@@ -1,0 +1,14 @@
+.learn {
+  &__validation {
+    background-color: rgba(236, 240, 241,1.0);
+    padding-bottom: 2em;
+
+    .learn_input {
+      padding: .5em;
+
+      &__btn {
+        margin-top: 1em;
+      }
+    }
+  }
+}
